@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var oTable = $('#table_id').DataTable({
+                "ajax": "get_data.json"
+            });
+            setInterval(function () {
+                oTable.ajax.reload();
+            }, 5000);
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <table id="table_id" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>RPM</th>
+                <th>POWER</th>
+                <th>DATE_TIME</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>RPM</th>
+                <th>POWER</th>
+                <th>DATE_TIME</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
